@@ -1,6 +1,6 @@
 #!/usr/bin/env -S gjs -m
 
-import Gtk from 'gi://Gtk?version=3.0';
+import Gtk from 'gi://Gtk?version=4.0';
 import GObject from 'gi://GObject';
 import system from 'system';
 
@@ -16,7 +16,7 @@ class _Application extends Gtk.Application {
     createWindow(): void {
         const window = new Gtk.ApplicationWindow({ application: this, title: 'GJS GTK Window' });
         window.set_default_size(400, 300);
-        window.show_all();
+        window.present();
     }
 }
 

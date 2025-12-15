@@ -7,7 +7,7 @@ A modern template for building GTK applications using GJS (GNOME JavaScript) and
 - **TypeScript Support**: Full type safety with `@girs` type definitions.
 - **Modern GJS**: Uses ESM modules (`import`/`export`) and `gi://` imports.
 - **GObject Inheritance**: Clean class-based component structure.
-- **GTK 3**: Set up for GTK 3 development (easily adaptable to GTK 4).
+- **GTK 4**: Set up for GTK 4 development.
 
 ## Prerequisites
 
