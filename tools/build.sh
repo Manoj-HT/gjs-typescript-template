@@ -3,6 +3,7 @@
 # Build the project
 echo "Building project..."
 npm run build
+cp src/style.css dist/
 
 # Create release directory
 rm -rf release

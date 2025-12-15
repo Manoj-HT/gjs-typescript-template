@@ -17,11 +17,13 @@ A modern template for building GTK applications using GJS (GNOME JavaScript) and
 ## Getting Started
 
 1.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
 2.  **Compile TypeScript:**
+
     ```bash
     npm run build
     # OR manually:
@@ -33,6 +35,24 @@ A modern template for building GTK applications using GJS (GNOME JavaScript) and
     npm start
     # OR manually:
     ./dist/app.js
+    ```
+
+## Development
+
+- **Watch Mode**: Automatically recompile TypeScript on changes.
+    ```bash
+    npm run watch
+    ```
+    *Note: If you modify `style.css`, you need to manually copy it to `dist/` or restart the build.*
+
+- **Linting**: Check code for errors.
+    ```bash
+    npm run lint
+    ```
+
+- **Formatting**: Auto-format code.
+    ```bash
+    npm run format
     ```
 
 ## Packaging
