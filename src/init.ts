@@ -2,6 +2,7 @@ import Gtk from 'gi://Gtk?version=4.0';
 import Gdk from 'gi://Gdk?version=4.0';
 import GObject from 'gi://GObject';
 import Gio from 'gi://Gio';
+import { loadCss } from './utils/css.js';
 
 class _Application extends Gtk.Application {
     _init(): void {
@@ -18,26 +19,7 @@ class _Application extends Gtk.Application {
     }
 
     loadStylesheet(): void {
-        const provider = new Gtk.CssProvider();
-        const uri = import.meta.url;
-        // style.css is expected to be in the same directory as this script (dist/)
-        const cssUri = uri.replace('init.js', 'style.css');
-
-        try {
-            const cssFile = Gio.File.new_for_uri(cssUri);
-            provider.load_from_file(cssFile);
-
-            const display = Gdk.Display.get_default();
-            if (display) {
-                Gtk.StyleContext.add_provider_for_display(
-                    display,
-                    provider,
-                    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-                );
-            }
-        } catch (e) {
-            console.error('Failed to load CSS:', e);
-        }
+        loadCss('./styles/main.css', import.meta.url);
     }
 
     createWindow(): void {
@@ -46,5 +28,4 @@ class _Application extends Gtk.Application {
         window.present();
     }
 }
-
 export const Application = GObject.registerClass(_Application);

@@ -4,7 +4,7 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "build": "tsc && cp src/style.css dist/",
+        "build": "tsc && rsync -av --exclude='*.ts' --exclude='*.tsx' src/ dist/",
         "watch": "tsc -w",
         "lint": "eslint .",
         "format": "prettier --write .",

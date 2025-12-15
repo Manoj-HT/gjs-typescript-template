@@ -37,6 +37,18 @@ A modern template for building GTK applications using GJS (GNOME JavaScript) and
     ./dist/app.js
     ```
 
+## CSS Styling
+
+- **Global Styles**: Located in `src/styles/main.css`. Loaded automatically by `src/init.ts`.
+- **Per-Component Styles**: You can create CSS files next to your TypeScript components. Load them using the helper:
+    ```typescript
+    import { loadCss } from '../utils/css.js';
+    
+    // In your component
+    loadCss('./MyComponent.css', import.meta.url);
+    ```
+- **Asset Copying**: The build script automatically copies all non-TypeScript files (CSS, images, UI definitions) from `src/` to `dist/`, preserving the directory structure.
+
 ## Development
 
 - **Watch Mode**: Automatically recompile TypeScript on changes.
