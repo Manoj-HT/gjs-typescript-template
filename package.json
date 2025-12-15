@@ -5,12 +5,11 @@
     "main": "app.js",
     "scripts": {
             "build": "tsc && rsync -av --exclude='*.ts' --exclude='*.tsx' src/ dist/",
-            "watch": "npm run dev",
-            "watch:ts": "tsc -w",
-            "watch:assets": "copyfiles -u 1 -w \"src/**/*.css\" dist",
-            "start:dev": "nodemon --watch dist --ext js,css --delay 1 --exec \"gjs -m dist/app.js\"",
-            "dev": "concurrently -n \"TS,CSS,APP\" -c \"blue,magenta,green\" \"npm run watch:ts\" \"npm run watch:assets\" \"npm run start:dev\"",
-            "lint": "eslint .",
+                "watch": "npm run dev",
+                "watch:ts": "tsc -w",
+                "watch:assets": "nodemon --watch src --ext css --exec \"copyfiles -u 1 'src/**/*.css' dist\"",
+                "start:dev": "nodemon --watch dist --ext js,css --delay 1 --exec \"gjs -m dist/app.js\"",
+                "dev": "concurrently -n \"TS,CSS,APP\" -c \"blue,magenta,green\" \"npm run watch:ts\" \"npm run watch:assets\" \"npm run start:dev\"",            "lint": "eslint .",
             "format": "prettier --write .",        "start": "gjs -m dist/app.js",
         "package": "./tools/build.sh"
     },
