@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "gjs -m dist/app.js",
+    "package": "./tools/build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

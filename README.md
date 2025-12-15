@@ -35,6 +35,16 @@ A modern template for building GTK applications using GJS (GNOME JavaScript) and
     ./dist/app.js
     ```
 
+## Packaging
+
+To create a distribution build with a self-installing runner:
+
+```bash
+npm run package
+```
+
+This creates a `release/` directory containing the compiled application and a `start.sh` script. The script checks for GJS and attempts to install it if missing.
+
 ## Project Structure
 
 - `app.ts`: Main application entry point (TypeScript).
