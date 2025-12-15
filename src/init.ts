@@ -1,8 +1,5 @@
-#!/usr/bin/env -S gjs -m
-
 import Gtk from 'gi://Gtk?version=4.0';
 import GObject from 'gi://GObject';
-import system from 'system';
 
 class _Application extends Gtk.Application {
     _init(): void {
@@ -20,7 +17,4 @@ class _Application extends Gtk.Application {
     }
 }
 
-const Application = GObject.registerClass(_Application);
-
-const app = new Application();
-app.run([system.programInvocationName, ...system.programArgs]);
+export const Application = GObject.registerClass(_Application);
