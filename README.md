@@ -51,11 +51,12 @@ A modern template for building GTK applications using GJS (GNOME JavaScript) and
 
 ## Development
 
-- **Watch Mode**: Automatically recompile TypeScript on changes.
+- **Hot Reload (Recommended)**: Automatically compiles TypeScript, copies assets, and restarts the app on changes.
     ```bash
+    npm run dev
+    # OR
     npm run watch
     ```
-    *Note: If you modify `style.css`, you need to manually copy it to `dist/` or restart the build.*
 
 - **Linting**: Check code for errors.
     ```bash
